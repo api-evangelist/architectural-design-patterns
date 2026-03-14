@@ -1,0 +1,15 @@
+name: Architectural Design Patterns
+description: Reusable solutions to commonly occurring problems in software architecture
+  that provide templates for designing system structure, component interactions, and
+  overall organization of applications. It is used across a range of industries and
+  technical contexts to improve efficiency and outcomes.
+url: https://en.wikipedia.org/wiki/Architectural_pattern
+tags:
+- Software Architecture
+- Design Patterns
+- Best Practices
+- Software Engineering
+created: '2025'
+modified: '2025'
+apis: []
+common: []
