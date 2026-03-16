@@ -1,15 +1,29 @@
+aid: architectural-design-patterns
 name: Architectural Design Patterns
-description: Reusable solutions to commonly occurring problems in software architecture
-  that provide templates for designing system structure, component interactions, and
-  overall organization of applications. It is used across a range of industries and
-  technical contexts to improve efficiency and outcomes.
-url: https://en.wikipedia.org/wiki/Architectural_pattern
+description: >-
+  Architectural Design Patterns are reusable solutions to commonly occurring
+  problems in software architecture that provide templates for designing system
+  structure, component interactions, and overall organization of applications.
+  They are used across a range of industries and technical contexts to improve
+  efficiency and outcomes.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- Software Architecture
-- Design Patterns
-- Best Practices
-- Software Engineering
-created: '2025'
-modified: '2025'
+  - Software Architecture
+  - Design Patterns
+  - Best Practices
+  - Software Engineering
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/apis.yml
+created: '2025-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 apis: []
-common: []
+common:
+  - type: Website
+    url: https://en.wikipedia.org/wiki/Architectural_pattern
+  - type: GitHub Organization
+    url: https://github.com/api-evangelist
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
