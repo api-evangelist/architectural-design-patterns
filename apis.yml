@@ -9,9 +9,9 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Software Architecture
-  - Design Patterns
   - Best Practices
+  - Design Patterns
+  - Software Architecture
   - Software Engineering
 url: >-
   https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/apis.yml
