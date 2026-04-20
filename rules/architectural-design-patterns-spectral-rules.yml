@@ -1,0 +1,108 @@
+rules:
+  adp-pattern-id-required:
+    description: Pattern must have an id field
+    message: Pattern object must have an id property
+    severity: error
+    given: "$.components.schemas.Pattern.properties"
+    then:
+      field: id
+      function: truthy
+
+  adp-pattern-name-required:
+    description: Pattern must have a name field
+    message: Pattern object must have a name property
+    severity: error
+    given: "$.components.schemas.Pattern.properties"
+    then:
+      field: name
+      function: truthy
+
+  adp-pattern-description-required:
+    description: Pattern must have a description field
+    message: Pattern object must have a description property
+    severity: error
+    given: "$.components.schemas.Pattern.properties"
+    then:
+      field: description
+      function: truthy
+
+  adp-relationship-type-enum:
+    description: Relationship type must be a valid enum value
+    message: Relationship type must be uses, extends, alternative, related, or conflicts
+    severity: error
+    given: "$.components.schemas.Relationship.properties.relationshipType"
+    then:
+      field: enum
+      function: truthy
+
+  adp-category-enum:
+    description: Pattern category must be a valid enum value
+    message: Pattern category must be a valid value
+    severity: warn
+    given: "$.paths./patterns.get.parameters[?(@.name=='category')].schema"
+    then:
+      field: enum
+      function: truthy
+
+  adp-operations-have-tags:
+    description: All API operations must have tags
+    message: Operation must include at least one tag
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: tags
+      function: truthy
+
+  adp-operations-have-summary:
+    description: All API operations must have a summary
+    message: Operation must include a summary
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: summary
+      function: truthy
+
+  adp-operations-have-operation-id:
+    description: All API operations must have an operationId
+    message: Operation must include an operationId
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: operationId
+      function: truthy
+
+  adp-list-responses-have-total:
+    description: List responses must include a total count
+    message: List schema must include a total property
+    severity: warn
+    given: "$.components.schemas[*List].properties"
+    then:
+      field: total
+      function: truthy
+
+  adp-anti-pattern-name-required:
+    description: Anti-pattern must have a name field
+    message: AntiPattern object must have a name property
+    severity: error
+    given: "$.components.schemas.AntiPattern.properties"
+    then:
+      field: name
+      function: truthy
+
+  adp-info-contact-required:
+    description: API info must include contact information
+    message: Info object must have a contact field
+    severity: warn
+    given: "$.info"
+    then:
+      field: contact
+      function: truthy
+
+  adp-servers-defined:
+    description: API must define at least one server
+    message: Servers array must be defined
+    severity: error
+    given: "$"
+    then:
+      field: servers
+      function: truthy

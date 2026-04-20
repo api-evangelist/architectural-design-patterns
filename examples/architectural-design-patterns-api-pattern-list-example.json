@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-list-schema.json",
+  "example": {
+    "total": 42,
+    "offset": 42,
+    "limit": 42,
+    "patterns": [
+      {
+        "id": {},
+        "name": {},
+        "category": {},
+        "description": {},
+        "problem": {},
+        "solution": {},
+        "consequences": {},
+        "tags": {},
+        "relatedPatterns": {},
+        "applicability": {},
+        "knownUses": {}
+      }
+    ]
+  }
+}

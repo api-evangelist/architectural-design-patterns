@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-structure/architectural-design-patterns-api-relationship-list-structure.json",
+  "title": "RelationshipList",
+  "type": "object",
+  "properties": {
+    "total": {
+      "type": "integer"
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sourcePatternId": {},
+          "targetPatternId": {},
+          "relationshipType": {},
+          "description": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+vocabulary:
+  name: Architectural Design Patterns Vocabulary
+  description: Operational vocabulary for the Architectural Design Patterns API
+  resources:
+    - name: Pattern
+      description: A reusable solution to a commonly occurring software architecture problem
+    - name: AntiPattern
+      description: A common response to recurring problems that is usually ineffective and risks being counterproductive
+    - name: Category
+      description: A grouping of related architectural design patterns
+    - name: Example
+      description: A code implementation example demonstrating a pattern in a specific programming language
+    - name: Relationship
+      description: A documented connection or interaction between two architectural patterns
+  actions:
+    - name: List
+      description: Retrieve a paginated collection of resources
+    - name: Get
+      description: Retrieve a single resource by identifier
+  personas:
+    - name: Software Architect
+      description: Professional responsible for high-level system design and architectural decisions
+    - name: Developer
+      description: Software developer implementing systems using established architectural patterns
+    - name: Educator
+      description: Instructor or trainer teaching software architecture concepts and patterns
+  dimensions:
+    - name: Reusability
+      description: Patterns that can be applied across different systems and contexts
+    - name: Problem-Solution Mapping
+      description: Clear articulation of the problem each pattern addresses and its solution
+    - name: Consequences
+      description: Trade-offs and implications of applying an architectural pattern

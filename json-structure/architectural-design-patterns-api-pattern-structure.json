@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-structure/architectural-design-patterns-api-pattern-structure.json",
+  "title": "Pattern",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "problem": {
+      "type": "string"
+    },
+    "solution": {
+      "type": "string"
+    },
+    "consequences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relatedPatterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "applicability": {
+      "type": "string"
+    },
+    "knownUses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

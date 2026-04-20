@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-structure/architectural-design-patterns-api-category-list-structure.json",
+  "title": "CategoryList",
+  "type": "object",
+  "properties": {
+    "total": {
+      "type": "integer"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {},
+          "name": {},
+          "description": {},
+          "patternCount": {}
+        }
+      }
+    }
+  }
+}

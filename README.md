@@ -1,27 +1,31 @@
-# Architectural Design Patterns (architectural-design-patterns)
-Architectural Design Patterns are reusable solutions to commonly occurring problems in software architecture that provide templates for designing system structure, component interactions, and overall organization of applications. They are used across a range of industries and technical contexts to improve efficiency and outcomes.
+# Architectural Design Patterns
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/apis.yml)
+Architectural Design Patterns are reusable solutions to commonly occurring problems in software architecture. They provide templates for designing system structure, component interactions, and overall organization of applications across a range of industries and technical contexts.
 
-## Scope
+**URL:** https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/apis.yml
 
-- **Type:** Index 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+## Tags
 
-## Tags:
+- Design Patterns
+- Software Architecture
+- Best Practices
+- Software Engineering
+- System Design
+- Microservices
 
- - Software Architecture, Design Patterns, Best Practices, Software Engineering
+## APIs
+
+### Architectural Design Patterns API
+
+API providing access to a catalog of architectural design patterns, their descriptions, use cases, implementation examples, and relationships between patterns.
+
+- **Documentation:** https://en.wikipedia.org/wiki/Architectural_pattern
+- **OpenAPI:** https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/openapi/architectural-design-patterns-api.yaml
 
 ## Timestamps
 
-- **Created:** 2025-01-01 
-- **Modified:** 2026-03-16 
-
-## Common Properties
-
-- [Website](https://en.wikipedia.org/wiki/Architectural_pattern)
-- [GitHub Organization](https://github.com/api-evangelist)
+- **Created:** 2025-01-01
+- **Modified:** 2026-04-19
 
 ## Maintainers
 

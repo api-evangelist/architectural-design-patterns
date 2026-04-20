@@ -1,0 +1,14 @@
+{
+  "$schema": "https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-category-list-schema.json",
+  "example": {
+    "total": 42,
+    "categories": [
+      {
+        "id": {},
+        "name": {},
+        "description": {},
+        "patternCount": {}
+      }
+    ]
+  }
+}

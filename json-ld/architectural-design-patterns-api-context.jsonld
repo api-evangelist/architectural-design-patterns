@@ -1,0 +1,17 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "adp": "https://apievangelist.com/vocab/architectural-design-patterns#",
+    "schema": "https://schema.org/",
+    "Pattern": "adp:Pattern",
+    "PatternList": "adp:PatternList",
+    "Example": "adp:Example",
+    "ExampleList": "adp:ExampleList",
+    "Relationship": "adp:Relationship",
+    "RelationshipList": "adp:RelationshipList",
+    "Category": "adp:Category",
+    "CategoryList": "adp:CategoryList",
+    "AntiPattern": "adp:AntiPattern",
+    "AntiPatternList": "adp:AntiPatternList"
+  }
+}

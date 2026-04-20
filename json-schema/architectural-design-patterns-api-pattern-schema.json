@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json",
+  "title": "Pattern",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "problem": {
+      "type": "string"
+    },
+    "solution": {
+      "type": "string"
+    },
+    "consequences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relatedPatterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "applicability": {
+      "type": "string"
+    },
+    "knownUses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

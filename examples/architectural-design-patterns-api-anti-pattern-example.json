@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-anti-pattern-schema.json",
+  "example": {
+    "id": "example-string",
+    "name": "example-string",
+    "description": "example-string",
+    "symptoms": [
+      "example-string"
+    ],
+    "causes": [
+      "example-string"
+    ],
+    "refactoredSolution": "example-string",
+    "relatedPatterns": [
+      "example-string"
+    ]
+  }
+}

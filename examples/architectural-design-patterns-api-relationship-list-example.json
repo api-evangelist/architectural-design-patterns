@@ -1,0 +1,14 @@
+{
+  "$schema": "https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-relationship-list-schema.json",
+  "example": {
+    "total": 42,
+    "relationships": [
+      {
+        "sourcePatternId": {},
+        "targetPatternId": {},
+        "relationshipType": {},
+        "description": {}
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-anti-pattern-schema.json",
+  "title": "AntiPattern",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "symptoms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "causes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "refactoredSolution": {
+      "type": "string"
+    },
+    "relatedPatterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
