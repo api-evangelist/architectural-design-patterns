@@ -1,0 +1,318 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Architectural Design Patterns API
+  description: API providing access to a catalog of architectural design patterns, their descriptions, use cases, implementation
+    examples, and relationships between patterns.
+  tags:
+  - Architectural
+  - Design
+  - Patterns
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: architectural-design-patterns
+    baseUri: https://api.apievangelist.com/v1/architectural-design-patterns
+    description: Architectural Design Patterns API HTTP API.
+    resources:
+    - name: patterns
+      path: /patterns
+      operations:
+      - name: listpatterns
+        method: GET
+        description: List architectural design patterns
+        inputParameters:
+        - name: category
+          in: query
+          type: string
+          description: Filter by pattern category
+        - name: tag
+          in: query
+          type: string
+          description: Filter by tag
+        - name: limit
+          in: query
+          type: integer
+        - name: offset
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: patterns-patternid
+      path: /patterns/{patternId}
+      operations:
+      - name: getpattern
+        method: GET
+        description: Get design pattern details
+        inputParameters:
+        - name: patternId
+          in: path
+          type: string
+          required: true
+          description: The unique pattern identifier
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: patterns-patternid-examples
+      path: /patterns/{patternId}/examples
+      operations:
+      - name: getpatternexamples
+        method: GET
+        description: Get implementation examples for a pattern
+        inputParameters:
+        - name: patternId
+          in: path
+          type: string
+          required: true
+        - name: language
+          in: query
+          type: string
+          description: Programming language for examples
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: patterns-patternid-relationships
+      path: /patterns/{patternId}/relationships
+      operations:
+      - name: getpatternrelationships
+        method: GET
+        description: Get relationships for a pattern
+        inputParameters:
+        - name: patternId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: categories
+      path: /categories
+      operations:
+      - name: listcategories
+        method: GET
+        description: List pattern categories
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: anti-patterns
+      path: /anti-patterns
+      operations:
+      - name: listantipatterns
+        method: GET
+        description: List anti-patterns
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+        - name: offset
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: architectural-design-patterns-rest
+    description: REST adapter for Architectural Design Patterns API.
+    resources:
+    - path: /patterns
+      name: listpatterns
+      operations:
+      - method: GET
+        name: listpatterns
+        description: List architectural design patterns
+        call: architectural-design-patterns.listpatterns
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /patterns/{patternId}
+      name: getpattern
+      operations:
+      - method: GET
+        name: getpattern
+        description: Get design pattern details
+        call: architectural-design-patterns.getpattern
+        with:
+          patternId: rest.patternId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /patterns/{patternId}/examples
+      name: getpatternexamples
+      operations:
+      - method: GET
+        name: getpatternexamples
+        description: Get implementation examples for a pattern
+        call: architectural-design-patterns.getpatternexamples
+        with:
+          patternId: rest.patternId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /patterns/{patternId}/relationships
+      name: getpatternrelationships
+      operations:
+      - method: GET
+        name: getpatternrelationships
+        description: Get relationships for a pattern
+        call: architectural-design-patterns.getpatternrelationships
+        with:
+          patternId: rest.patternId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /categories
+      name: listcategories
+      operations:
+      - method: GET
+        name: listcategories
+        description: List pattern categories
+        call: architectural-design-patterns.listcategories
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /anti-patterns
+      name: listantipatterns
+      operations:
+      - method: GET
+        name: listantipatterns
+        description: List anti-patterns
+        call: architectural-design-patterns.listantipatterns
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: architectural-design-patterns-mcp
+    transport: http
+    description: MCP adapter for Architectural Design Patterns API for AI agent use.
+    tools:
+    - name: listpatterns
+      description: List architectural design patterns
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architectural-design-patterns.listpatterns
+      with:
+        category: tools.category
+        tag: tools.tag
+        limit: tools.limit
+        offset: tools.offset
+      inputParameters:
+      - name: category
+        type: string
+        description: Filter by pattern category
+      - name: tag
+        type: string
+        description: Filter by tag
+      - name: limit
+        type: integer
+        description: limit
+      - name: offset
+        type: integer
+        description: offset
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpattern
+      description: Get design pattern details
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architectural-design-patterns.getpattern
+      with:
+        patternId: tools.patternId
+      inputParameters:
+      - name: patternId
+        type: string
+        description: The unique pattern identifier
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpatternexamples
+      description: Get implementation examples for a pattern
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architectural-design-patterns.getpatternexamples
+      with:
+        patternId: tools.patternId
+        language: tools.language
+      inputParameters:
+      - name: patternId
+        type: string
+        description: patternId
+        required: true
+      - name: language
+        type: string
+        description: Programming language for examples
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpatternrelationships
+      description: Get relationships for a pattern
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architectural-design-patterns.getpatternrelationships
+      with:
+        patternId: tools.patternId
+      inputParameters:
+      - name: patternId
+        type: string
+        description: patternId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcategories
+      description: List pattern categories
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architectural-design-patterns.listcategories
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listantipatterns
+      description: List anti-patterns
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architectural-design-patterns.listantipatterns
+      with:
+        limit: tools.limit
+        offset: tools.offset
+      inputParameters:
+      - name: limit
+        type: integer
+        description: limit
+      - name: offset
+        type: integer
+        description: offset
+      outputParameters:
+      - type: object
+        mapping: $.
