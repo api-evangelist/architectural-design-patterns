@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Architectural Design Patterns API — Anti-Patterns
+  description: 'Architectural Design Patterns API — Anti-Patterns. 1 operations. Lead operation: List anti-patterns. Self-contained
+    Naftiko capability covering one Architectural Design Patterns business surface.'
+  tags:
+  - Architectural Design Patterns
+  - Anti-Patterns
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ARCHITECTURAL_DESIGN_PATTERNS_API_KEY: ARCHITECTURAL_DESIGN_PATTERNS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: architectural-design-patterns-anti-patterns
+    baseUri: https://api.apievangelist.com/v1/architectural-design-patterns
+    description: Architectural Design Patterns API — Anti-Patterns business capability. Self-contained, no shared references.
+    resources:
+    - name: anti-patterns
+      path: /anti-patterns
+      operations:
+      - name: listantipatterns
+        method: GET
+        description: List anti-patterns
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+        - name: offset
+          in: query
+          type: integer
+  exposes:
+  - type: rest
+    namespace: architectural-design-patterns-anti-patterns-rest
+    port: 8080
+    description: REST adapter for Architectural Design Patterns API — Anti-Patterns. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/anti-patterns
+      name: anti-patterns
+      description: REST surface for anti-patterns.
+      operations:
+      - method: GET
+        name: listantipatterns
+        description: List anti-patterns
+        call: architectural-design-patterns-anti-patterns.listantipatterns
+        with:
+          limit: rest.limit
+          offset: rest.offset
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: architectural-design-patterns-anti-patterns-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Architectural Design Patterns API — Anti-Patterns. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: list-anti-patterns
+      description: List anti-patterns
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: architectural-design-patterns-anti-patterns.listantipatterns
+      with:
+        limit: tools.limit
+        offset: tools.offset
+      outputParameters:
+      - type: object
+        mapping: $.
