@@ -4,7 +4,7 @@ description: Architectural Design Patterns are reusable solutions to commonly oc
   They provide templates for designing system structure, component interactions, and overall organization of applications
   across a range of industries and technical contexts.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Design Patterns
 - Software Architecture
