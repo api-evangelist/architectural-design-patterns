@@ -41,6 +41,10 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/architectural-design-patterns-patterns.yaml
 common:
+- type: VulnerabilityDisclosure
+  url: security/architectural-design-patterns-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/architectural-design-patterns-domain-security.yml
 - type: Portal
   url: https://en.wikipedia.org/wiki/Architectural_pattern
 - type: Documentation
