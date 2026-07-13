@@ -1,108 +1,180 @@
+# architectural-design-patterns — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 100% of servers already https (error)
+#   - servers-expected-domain: 1/1 servers on apievangelist.com
+#   - path-params-casing: camel @ 100% (n=3)
+#   - query-params-casing: snake @ 100% (n=7)
+#   - operationid-casing: camel @ 100% (n=6)
+#   - schema-names-casing: pascal @ 100% (n=10)
+#   - schema-properties-casing: snake @ 79% (n=47)
+#   - pagination params observed: ['limit', 'offset']
+#   - merge: kept 12 existing, added 8 measured, upgraded 0
+#   - added: servers-https-only, servers-expected-domain, path-params-casing, query-params-casing, operationid-casing, schema-names-casing, schema-properties-casing, no-empty-descriptions
+extends:
+  - spectral:oas
 rules:
   adp-pattern-id-required:
     description: Pattern must have an id field
     message: Pattern object must have an id property
     severity: error
-    given: "$.components.schemas.Pattern.properties"
+    given: $.components.schemas.Pattern.properties
     then:
       field: id
       function: truthy
-
   adp-pattern-name-required:
     description: Pattern must have a name field
     message: Pattern object must have a name property
     severity: error
-    given: "$.components.schemas.Pattern.properties"
+    given: $.components.schemas.Pattern.properties
     then:
       field: name
       function: truthy
-
   adp-pattern-description-required:
     description: Pattern must have a description field
     message: Pattern object must have a description property
     severity: error
-    given: "$.components.schemas.Pattern.properties"
+    given: $.components.schemas.Pattern.properties
     then:
       field: description
       function: truthy
-
   adp-relationship-type-enum:
     description: Relationship type must be a valid enum value
     message: Relationship type must be uses, extends, alternative, related, or conflicts
     severity: error
-    given: "$.components.schemas.Relationship.properties.relationshipType"
+    given: $.components.schemas.Relationship.properties.relationshipType
     then:
       field: enum
       function: truthy
-
   adp-category-enum:
     description: Pattern category must be a valid enum value
     message: Pattern category must be a valid value
     severity: warn
-    given: "$.paths./patterns.get.parameters[?(@.name=='category')].schema"
+    given: $.paths./patterns.get.parameters[?(@.name=='category')].schema
     then:
       field: enum
       function: truthy
-
   adp-operations-have-tags:
     description: All API operations must have tags
     message: Operation must include at least one tag
     severity: warn
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: tags
       function: truthy
-
   adp-operations-have-summary:
     description: All API operations must have a summary
     message: Operation must include a summary
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: summary
       function: truthy
-
   adp-operations-have-operation-id:
     description: All API operations must have an operationId
     message: Operation must include an operationId
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: operationId
       function: truthy
-
   adp-list-responses-have-total:
     description: List responses must include a total count
     message: List schema must include a total property
     severity: warn
-    given: "$.components.schemas[*List].properties"
+    given: $.components.schemas[*List].properties
     then:
       field: total
       function: truthy
-
   adp-anti-pattern-name-required:
     description: Anti-pattern must have a name field
     message: AntiPattern object must have a name property
     severity: error
-    given: "$.components.schemas.AntiPattern.properties"
+    given: $.components.schemas.AntiPattern.properties
     then:
       field: name
       function: truthy
-
   adp-info-contact-required:
     description: API info must include contact information
     message: Info object must have a contact field
     severity: warn
-    given: "$.info"
+    given: $.info
     then:
       field: contact
       function: truthy
-
   adp-servers-defined:
     description: API must define at least one server
     message: Servers array must be defined
     severity: error
-    given: "$"
+    given: $
     then:
       field: servers
+      function: truthy
+  servers-https-only:
+    description: Server URLs must use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: ^https://
+  servers-expected-domain:
+    description: Server URLs should be on the apievangelist.com domain.
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: apievangelist\.com
+  path-params-casing:
+    description: Path parameters should be camelCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*].parameters[?(@.in=='path')].name
+    then:
+      function: casing
+      functionOptions:
+        type: camel
+  query-params-casing:
+    description: Query parameters should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: casing
+      functionOptions:
+        type: snake
+  operationid-casing:
+    description: Operation IDs should be camelCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].operationId
+    then:
+      function: casing
+      functionOptions:
+        type: camel
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: pascal
+  schema-properties-casing:
+    description: Schema properties should be snake_case (the dominant convention in this API).
+    severity: info
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: snake
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    severity: warn
+    given: $..description
+    then:
       function: truthy
