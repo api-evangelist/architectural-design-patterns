@@ -41,6 +41,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/architectural-design-patterns-patterns.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/architectural-design-patterns-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/architectural-design-patterns-vulnerability-disclosure.yml
 - type: DomainSecurity
