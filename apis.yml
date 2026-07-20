@@ -1,5 +1,6 @@
 aid: architectural-design-patterns
 name: Architectural Design Patterns
+kind: topic
 description: Architectural Design Patterns are reusable solutions to commonly occurring problems in software architecture.
   They provide templates for designing system structure, component interactions, and overall organization of applications
   across a range of industries and technical contexts.
