@@ -1,0 +1,49 @@
+openapi: 3.0.3
+info:
+  title: Architectural Design Patterns Anti-Patterns Categories API
+  description: API providing access to a catalog of architectural design patterns, their descriptions, use cases, implementation examples, and relationships between patterns.
+  version: 1.0.0
+  contact:
+    name: API Evangelist
+    url: https://apievangelist.com
+servers:
+- url: https://api.apievangelist.com/v1/architectural-design-patterns
+  description: Production
+tags:
+- name: Categories
+paths:
+  /categories:
+    get:
+      summary: List pattern categories
+      operationId: listCategories
+      tags:
+      - Categories
+      responses:
+        '200':
+          description: List of pattern categories
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryList'
+components:
+  schemas:
+    Category:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        patternCount:
+          type: integer
+    CategoryList:
+      type: object
+      properties:
+        total:
+          type: integer
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
