@@ -5,7 +5,19 @@ description: Architectural Design Patterns are reusable solutions to commonly oc
   They provide templates for designing system structure, component interactions, and overall organization of applications
   across a range of industries and technical contexts.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/architectural-design-patterns.png
 tags:
 - Design Patterns
 - Software Architecture
@@ -18,23 +30,61 @@ created: '2025-01-01'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: architectural-design-patterns:architectural-design-patterns-api
-  name: Architectural Design Patterns API
-  description: API providing access to a catalog of architectural design patterns, their descriptions, use cases, implementation
-    examples, and relationships between patterns.
+- aid: architectural-design-patterns:architectural-design-patterns-anti-patterns-api
+  name: Architectural Design Patterns Anti-Patterns API
+  description: >-
+    The Anti-Patterns API from Architectural Design Patterns — 1 operation(s) for anti-patterns.
   humanURL: https://en.wikipedia.org/wiki/Architectural_pattern
   tags:
-  - Design Patterns
-  - Software Architecture
-  - Pattern Catalog
-  - Best Practices
+  - Anti-Patterns
   properties:
+  - type: OpenAPI
+    url: openapi/architectural-design-patterns-anti-patterns-api-openapi.yml
   - type: Documentation
     url: https://en.wikipedia.org/wiki/Architectural_pattern
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/openapi/architectural-design-patterns-api.yaml
   - type: JSONSchema
-    url: https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json
+  - type: X-NaftikoCapability
+    url: capabilities/architectural-design-patterns-anti-patterns.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/architectural-design-patterns-categories.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/architectural-design-patterns-patterns.yaml
+- aid: architectural-design-patterns:architectural-design-patterns-categories-api
+  name: Architectural Design Patterns Categories API
+  description: The Categories API from Architectural Design Patterns — 1 operation(s) for categories.
+  humanURL: https://en.wikipedia.org/wiki/Architectural_pattern
+  tags:
+  - Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/architectural-design-patterns-categories-api-openapi.yml
+  - type: Documentation
+    url: https://en.wikipedia.org/wiki/Architectural_pattern
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json
+  - type: X-NaftikoCapability
+    url: capabilities/architectural-design-patterns-anti-patterns.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/architectural-design-patterns-categories.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/architectural-design-patterns-patterns.yaml
+- aid: architectural-design-patterns:architectural-design-patterns-patterns-api
+  name: Architectural Design Patterns Patterns API
+  description: The Patterns API from Architectural Design Patterns — 4 operation(s) for patterns.
+  humanURL: https://en.wikipedia.org/wiki/Architectural_pattern
+  tags:
+  - Patterns
+  properties:
+  - type: OpenAPI
+    url: openapi/architectural-design-patterns-patterns-api-openapi.yml
+  - type: Documentation
+    url: https://en.wikipedia.org/wiki/Architectural_pattern
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json
   - type: X-NaftikoCapability
     url: capabilities/architectural-design-patterns-anti-patterns.yaml
   - type: X-NaftikoCapability
