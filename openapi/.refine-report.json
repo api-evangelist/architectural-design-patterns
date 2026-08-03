@@ -1,0 +1,18 @@
+{
+  "provider": "architectural-design-patterns",
+  "sources": [
+    "architectural-design-patterns-anti-patterns-api-openapi.yml",
+    "architectural-design-patterns-categories-api-openapi.yml",
+    "architectural-design-patterns-patterns-api-openapi.yml"
+  ],
+  "outputs": [
+    "architectural-design-patterns-anti-patterns-api-openapi.yml",
+    "architectural-design-patterns-categories-api-openapi.yml",
+    "architectural-design-patterns-patterns-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
