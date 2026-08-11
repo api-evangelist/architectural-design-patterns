@@ -45,12 +45,6 @@ apis:
   - type: JSONSchema
     url: >-
       https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json
-  - type: X-NaftikoCapability
-    url: capabilities/architectural-design-patterns-anti-patterns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/architectural-design-patterns-categories.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/architectural-design-patterns-patterns.yaml
 - aid: architectural-design-patterns:architectural-design-patterns-categories-api
   name: Architectural Design Patterns Categories API
   description: The Categories API from Architectural Design Patterns — 1 operation(s) for categories.
@@ -65,12 +59,6 @@ apis:
   - type: JSONSchema
     url: >-
       https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json
-  - type: X-NaftikoCapability
-    url: capabilities/architectural-design-patterns-anti-patterns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/architectural-design-patterns-categories.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/architectural-design-patterns-patterns.yaml
 - aid: architectural-design-patterns:architectural-design-patterns-patterns-api
   name: Architectural Design Patterns Patterns API
   description: The Patterns API from Architectural Design Patterns — 4 operation(s) for patterns.
@@ -85,12 +73,6 @@ apis:
   - type: JSONSchema
     url: >-
       https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json
-  - type: X-NaftikoCapability
-    url: capabilities/architectural-design-patterns-anti-patterns.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/architectural-design-patterns-categories.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/architectural-design-patterns-patterns.yaml
 common:
 - type: AgenticAccess
   url: agentic-access/architectural-design-patterns-agentic-access.yml
