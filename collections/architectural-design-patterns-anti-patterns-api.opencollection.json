@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Architectural Design Patterns Anti-Patterns API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Anti-Patterns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List anti-patterns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.apievangelist.com/v1/architectural-design-patterns/anti-patterns",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List anti-patterns"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

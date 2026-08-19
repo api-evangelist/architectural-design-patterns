@@ -1,0 +1,119 @@
+{
+  "item": [
+    {
+      "id": "0b59e462-6d0a-4a98-b011-a3378d7d3f60",
+      "name": "Anti-Patterns",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a9112579-b453-43fd-bef3-34c6eecece68",
+          "name": "List anti-patterns",
+          "request": {
+            "name": "List anti-patterns",
+            "description": {},
+            "url": {
+              "path": [
+                "anti-patterns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88fd9f9a-5115-4dd4-a722-74fb13fb2568",
+              "name": "List of anti-patterns",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "anti-patterns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": 4760,\n  \"offset\": 2977,\n  \"limit\": 1479,\n  \"antiPatterns\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"symptoms\": [\n        \"string\",\n        \"string\"\n      ],\n      \"causes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"refactoredSolution\": \"string\",\n      \"relatedPatterns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"symptoms\": [\n        \"string\",\n        \"string\"\n      ],\n      \"causes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"refactoredSolution\": \"string\",\n      \"relatedPatterns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.apievangelist.com/v1/architectural-design-patterns",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c40a813f-8a00-48f3-b0c8-d3422a7cbedf",
+    "name": "Architectural Design Patterns Anti-Patterns API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API providing access to a catalog of architectural design patterns, their descriptions, use cases, implementation examples, and relationships between patterns.\n\nContact Support:\n Name: API Evangelist",
+      "type": "text/plain"
+    }
+  }
+}

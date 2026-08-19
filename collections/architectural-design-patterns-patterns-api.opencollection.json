@@ -1,0 +1,114 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Architectural Design Anti Patterns API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Patterns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List architectural design patterns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.apievangelist.com/v1/architectural-design-patterns/patterns",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter by pattern category"
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query",
+                "description": "Filter by tag"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List architectural design patterns"
+        },
+        {
+          "info": {
+            "name": "Get design pattern details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.apievangelist.com/v1/architectural-design-patterns/patterns/:patternId",
+            "params": [
+              {
+                "name": "patternId",
+                "value": "",
+                "type": "path",
+                "description": "The unique pattern identifier"
+              }
+            ]
+          },
+          "docs": "Get design pattern details"
+        },
+        {
+          "info": {
+            "name": "Get implementation examples for a pattern",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.apievangelist.com/v1/architectural-design-patterns/patterns/:patternId/examples",
+            "params": [
+              {
+                "name": "patternId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "Programming language for examples"
+              }
+            ]
+          },
+          "docs": "Get implementation examples for a pattern"
+        },
+        {
+          "info": {
+            "name": "Get relationships for a pattern",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.apievangelist.com/v1/architectural-design-patterns/patterns/:patternId/relationships",
+            "params": [
+              {
+                "name": "patternId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get relationships for a pattern"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
