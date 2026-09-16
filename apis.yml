@@ -1,9 +1,9 @@
 aid: architectural-design-patterns
 name: Architectural Design Patterns
 kind: topic
-description: Architectural Design Patterns are reusable solutions to commonly occurring problems in software architecture.
-  They provide templates for designing system structure, component interactions, and overall organization of applications
-  across a range of industries and technical contexts.
+description: Architectural Design Patterns are reusable solutions to commonly occurring problems in software
+  architecture. They provide templates for designing system structure, component interactions, and overall
+  organization of applications across a range of industries and technical contexts.
 type: Index
 deliveryModel:
   model: unknown
@@ -38,13 +38,12 @@ tags:
 - Microservices
 url: https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/apis.yml
 created: '2025-01-01'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: architectural-design-patterns:architectural-design-patterns-anti-patterns-api
   name: Architectural Design Patterns Anti-Patterns API
-  description: >-
-    The Anti-Patterns API from Architectural Design Patterns — 1 operation(s) for anti-patterns.
+  description: The Anti-Patterns API from Architectural Design Patterns — 1 operation(s) for anti-patterns.
   humanURL: https://en.wikipedia.org/wiki/Architectural_pattern
   tags:
   - Anti-Patterns
@@ -54,8 +53,7 @@ apis:
   - type: Documentation
     url: https://en.wikipedia.org/wiki/Architectural_pattern
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json
 - aid: architectural-design-patterns:architectural-design-patterns-categories-api
   name: Architectural Design Patterns Categories API
   description: The Categories API from Architectural Design Patterns — 1 operation(s) for categories.
@@ -68,10 +66,9 @@ apis:
   - type: Documentation
     url: https://en.wikipedia.org/wiki/Architectural_pattern
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json
 - aid: architectural-design-patterns:architectural-design-patterns-patterns-api
-  name: Architectural Design Patterns Patterns API
+  name: Architectural Design Patterns API
   description: The Patterns API from Architectural Design Patterns — 4 operation(s) for patterns.
   humanURL: https://en.wikipedia.org/wiki/Architectural_pattern
   tags:
@@ -82,8 +79,7 @@ apis:
   - type: Documentation
     url: https://en.wikipedia.org/wiki/Architectural_pattern
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json
+    url: https://raw.githubusercontent.com/api-evangelist/architectural-design-patterns/refs/heads/main/json-schema/architectural-design-patterns-api-pattern-schema.json
 common:
 - type: AgenticAccess
   url: agentic-access/architectural-design-patterns-agentic-access.yml
@@ -100,8 +96,8 @@ common:
 - type: Features
   data:
   - name: Pattern Catalog
-    description: Comprehensive catalog of architectural patterns including MVC, Event-Driven, Microservices, CQRS, Saga, and
-      more.
+    description: Comprehensive catalog of architectural patterns including MVC, Event-Driven, Microservices,
+      CQRS, Saga, and more.
   - name: Pattern Relationships
     description: Documented relationships and interactions between architectural patterns.
   - name: Implementation Examples
