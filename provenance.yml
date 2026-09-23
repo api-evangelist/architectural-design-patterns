@@ -120,15 +120,18 @@ artifacts:
   json-structure/architectural-design-patterns-api-relationship-structure.json:
     method: unknown
     evidence: no authorship recorded
+  openapi/_original/architectural-design-patterns-api.yaml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
   openapi/architectural-design-patterns-anti-patterns-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/architectural-design-patterns-categories-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/architectural-design-patterns-patterns-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   plans/architectural-design-patterns-plans-pricing.yml:
     method: generated
     evidence: declared in the artifact

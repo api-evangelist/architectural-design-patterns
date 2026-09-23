@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Architectural Design Patterns Anti-Patterns Categories API
+  title: Architectural Design Patterns Categories API
   description: API providing access to a catalog of architectural design patterns, their descriptions, use cases, implementation examples, and relationships between patterns.
   version: 1.0.0
   contact:
@@ -27,6 +27,15 @@ paths:
                 $ref: '#/components/schemas/CategoryList'
 components:
   schemas:
+    CategoryList:
+      type: object
+      properties:
+        total:
+          type: integer
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
     Category:
       type: object
       properties:
@@ -38,12 +47,3 @@ components:
           type: string
         patternCount:
           type: integer
-    CategoryList:
-      type: object
-      properties:
-        total:
-          type: integer
-        categories:
-          type: array
-          items:
-            $ref: '#/components/schemas/Category'

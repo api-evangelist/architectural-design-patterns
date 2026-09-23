@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Architectural Design Anti Patterns API
+  title: Architectural Design Patterns API
   description: API providing access to a catalog of architectural design patterns, their descriptions, use cases, implementation examples, and relationships between patterns.
   version: 1.0.0
   contact:
@@ -120,32 +120,6 @@ paths:
                 $ref: '#/components/schemas/RelationshipList'
 components:
   schemas:
-    RelationshipList:
-      type: object
-      properties:
-        total:
-          type: integer
-        relationships:
-          type: array
-          items:
-            $ref: '#/components/schemas/Relationship'
-    Relationship:
-      type: object
-      properties:
-        sourcePatternId:
-          type: string
-        targetPatternId:
-          type: string
-        relationshipType:
-          type: string
-          enum:
-          - uses
-          - extends
-          - alternative
-          - related
-          - conflicts
-        description:
-          type: string
     Example:
       type: object
       properties:
@@ -176,6 +150,32 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Pattern'
+    RelationshipList:
+      type: object
+      properties:
+        total:
+          type: integer
+        relationships:
+          type: array
+          items:
+            $ref: '#/components/schemas/Relationship'
+    Relationship:
+      type: object
+      properties:
+        sourcePatternId:
+          type: string
+        targetPatternId:
+          type: string
+        relationshipType:
+          type: string
+          enum:
+          - uses
+          - extends
+          - alternative
+          - related
+          - conflicts
+        description:
+          type: string
     Pattern:
       type: object
       properties:
