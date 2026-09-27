@@ -120,62 +120,15 @@ paths:
                 $ref: '#/components/schemas/RelationshipList'
 components:
   schemas:
-    Example:
-      type: object
-      properties:
-        id:
-          type: string
-        patternId:
-          type: string
-        language:
-          type: string
-        title:
-          type: string
-        description:
-          type: string
-        code:
-          type: string
-        notes:
-          type: string
-    PatternList:
+    ExampleList:
       type: object
       properties:
         total:
           type: integer
-        offset:
-          type: integer
-        limit:
-          type: integer
-        patterns:
+        examples:
           type: array
           items:
-            $ref: '#/components/schemas/Pattern'
-    RelationshipList:
-      type: object
-      properties:
-        total:
-          type: integer
-        relationships:
-          type: array
-          items:
-            $ref: '#/components/schemas/Relationship'
-    Relationship:
-      type: object
-      properties:
-        sourcePatternId:
-          type: string
-        targetPatternId:
-          type: string
-        relationshipType:
-          type: string
-          enum:
-          - uses
-          - extends
-          - alternative
-          - related
-          - conflicts
-        description:
-          type: string
+            $ref: '#/components/schemas/Example'
     Pattern:
       type: object
       properties:
@@ -209,12 +162,59 @@ components:
           type: array
           items:
             type: string
-    ExampleList:
+    Relationship:
+      type: object
+      properties:
+        sourcePatternId:
+          type: string
+        targetPatternId:
+          type: string
+        relationshipType:
+          type: string
+          enum:
+          - uses
+          - extends
+          - alternative
+          - related
+          - conflicts
+        description:
+          type: string
+    RelationshipList:
       type: object
       properties:
         total:
           type: integer
-        examples:
+        relationships:
           type: array
           items:
-            $ref: '#/components/schemas/Example'
+            $ref: '#/components/schemas/Relationship'
+    PatternList:
+      type: object
+      properties:
+        total:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+        patterns:
+          type: array
+          items:
+            $ref: '#/components/schemas/Pattern'
+    Example:
+      type: object
+      properties:
+        id:
+          type: string
+        patternId:
+          type: string
+        language:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        code:
+          type: string
+        notes:
+          type: string
