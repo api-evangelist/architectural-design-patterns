@@ -120,6 +120,49 @@ paths:
                 $ref: '#/components/schemas/RelationshipList'
 components:
   schemas:
+    RelationshipList:
+      type: object
+      properties:
+        total:
+          type: integer
+        relationships:
+          type: array
+          items:
+            $ref: '#/components/schemas/Relationship'
+    Example:
+      type: object
+      properties:
+        id:
+          type: string
+        patternId:
+          type: string
+        language:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        code:
+          type: string
+        notes:
+          type: string
+    Relationship:
+      type: object
+      properties:
+        sourcePatternId:
+          type: string
+        targetPatternId:
+          type: string
+        relationshipType:
+          type: string
+          enum:
+          - uses
+          - extends
+          - alternative
+          - related
+          - conflicts
+        description:
+          type: string
     ExampleList:
       type: object
       properties:
@@ -162,32 +205,6 @@ components:
           type: array
           items:
             type: string
-    Relationship:
-      type: object
-      properties:
-        sourcePatternId:
-          type: string
-        targetPatternId:
-          type: string
-        relationshipType:
-          type: string
-          enum:
-          - uses
-          - extends
-          - alternative
-          - related
-          - conflicts
-        description:
-          type: string
-    RelationshipList:
-      type: object
-      properties:
-        total:
-          type: integer
-        relationships:
-          type: array
-          items:
-            $ref: '#/components/schemas/Relationship'
     PatternList:
       type: object
       properties:
@@ -201,20 +218,3 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Pattern'
-    Example:
-      type: object
-      properties:
-        id:
-          type: string
-        patternId:
-          type: string
-        language:
-          type: string
-        title:
-          type: string
-        description:
-          type: string
-        code:
-          type: string
-        notes:
-          type: string
