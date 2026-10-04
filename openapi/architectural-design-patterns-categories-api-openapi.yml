@@ -27,6 +27,15 @@ paths:
                 $ref: '#/components/schemas/CategoryList'
 components:
   schemas:
+    CategoryList:
+      type: object
+      properties:
+        total:
+          type: integer
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
     Category:
       type: object
       properties:
@@ -38,12 +47,3 @@ components:
           type: string
         patternCount:
           type: integer
-    CategoryList:
-      type: object
-      properties:
-        total:
-          type: integer
-        categories:
-          type: array
-          items:
-            $ref: '#/components/schemas/Category'
