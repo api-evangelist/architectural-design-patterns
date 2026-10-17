@@ -120,58 +120,19 @@ paths:
                 $ref: '#/components/schemas/RelationshipList'
 components:
   schemas:
-    Relationship:
-      type: object
-      properties:
-        sourcePatternId:
-          type: string
-        targetPatternId:
-          type: string
-        relationshipType:
-          type: string
-          enum:
-          - uses
-          - extends
-          - alternative
-          - related
-          - conflicts
-        description:
-          type: string
-    RelationshipList:
+    PatternList:
       type: object
       properties:
         total:
           type: integer
-        relationships:
-          type: array
-          items:
-            $ref: '#/components/schemas/Relationship'
-    ExampleList:
-      type: object
-      properties:
-        total:
+        offset:
           type: integer
-        examples:
+        limit:
+          type: integer
+        patterns:
           type: array
           items:
-            $ref: '#/components/schemas/Example'
-    Example:
-      type: object
-      properties:
-        id:
-          type: string
-        patternId:
-          type: string
-        language:
-          type: string
-        title:
-          type: string
-        description:
-          type: string
-        code:
-          type: string
-        notes:
-          type: string
+            $ref: '#/components/schemas/Pattern'
     Pattern:
       type: object
       properties:
@@ -205,16 +166,55 @@ components:
           type: array
           items:
             type: string
-    PatternList:
+    Relationship:
+      type: object
+      properties:
+        sourcePatternId:
+          type: string
+        targetPatternId:
+          type: string
+        relationshipType:
+          type: string
+          enum:
+          - uses
+          - extends
+          - alternative
+          - related
+          - conflicts
+        description:
+          type: string
+    ExampleList:
       type: object
       properties:
         total:
           type: integer
-        offset:
-          type: integer
-        limit:
-          type: integer
-        patterns:
+        examples:
           type: array
           items:
-            $ref: '#/components/schemas/Pattern'
+            $ref: '#/components/schemas/Example'
+    RelationshipList:
+      type: object
+      properties:
+        total:
+          type: integer
+        relationships:
+          type: array
+          items:
+            $ref: '#/components/schemas/Relationship'
+    Example:
+      type: object
+      properties:
+        id:
+          type: string
+        patternId:
+          type: string
+        language:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        code:
+          type: string
+        notes:
+          type: string
